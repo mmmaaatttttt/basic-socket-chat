@@ -1,0 +1,8 @@
+#modal .form-group input {
+  margin: 0 20px;
+  min-width: 250px;
+}
+
+#modal {
+  margin-top: 150px;
+}

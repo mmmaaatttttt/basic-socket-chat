@@ -2,11 +2,13 @@
 html(lang="en")
 head
   meta(charset="UTF-8")
-  title Let's Chat!
+  title CHATTITUDE
   link(rel="stylesheet", href="/scripts/bootstrap/dist/css/bootstrap.css")
   link(rel="stylesheet", href="style.css")
 body
+  include partials/modal.pug
   block content
   script(src="/scripts/jquery/dist/jquery.js")
+  script(src="/scripts/bootstrap/dist/js/bootstrap.js")
   script(src="/scripts/socket.io-client/dist/socket.io.js")
   script(src="/client.js")

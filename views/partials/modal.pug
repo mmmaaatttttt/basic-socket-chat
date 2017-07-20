@@ -1,0 +1,11 @@
+#modal.modal.fade(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h4.modal-title Welcome to Chattitude!
+      .modal-body
+        form.form-inline
+          .form-group
+            label(for='username') Username
+            input#username.form-control(type='text', placeholder='What should we call you?', required)
+          button.btn.btn-primary(type='submit') Let me in!
