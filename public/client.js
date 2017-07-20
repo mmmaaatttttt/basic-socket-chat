@@ -1,0 +1,5 @@
+$(function() {
+
+  io.connect();
+
+});
