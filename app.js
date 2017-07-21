@@ -2,21 +2,25 @@ const express = require("express");
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const users = [];
 
 app.use(express.static(__dirname + "/public"));
 app.use('/scripts', express.static(__dirname + "/node_modules"));
 app.set('view engine', 'pug');
 
 io.on('connection', socket => {
-  let username = ''
+  let username = '';
 
   socket.on('new user from client', data => {
     username = data;
-    io.emit('new user from server', data);
+    users.push(username)
+    io.emit('new user from server', { users });
   });
 
-  socket.on('disconnect', (data, foo) => {
-    io.emit('disconnected user from server', username);
+  socket.on('disconnect', data => {
+    const idx = users.findIndex(u => u === username);
+    users.splice(idx, 1);
+    io.emit('disconnected user from server', { username, users });
   });
 
   socket.on('new message from client', data => {
