@@ -3,6 +3,10 @@
   min-width: 250px;
 }
 
+.container {
+  margin-top: 150px;
+}
+
 #modal {
   margin-top: 150px;
 }
@@ -10,6 +14,10 @@
 #new-message-area {
   background-color: #673ab7;
   padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
 }
 
 #new-message-area h2 {
@@ -21,9 +29,17 @@
   background-color: peachpuff;
 }
 
+.warning {
+  background-color: #ffbbbb;
+}
+
 #messages { 
   list-style: none;
   padding: 0;
+}
+
+#messages img {
+  max-width: 100%;
 }
 
 #messages li {

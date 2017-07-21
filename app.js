@@ -12,12 +12,12 @@ io.on('connection', socket => {
   let username = '';
 
   socket.on('new user from client', data => {
-    username = data;
+    username = data.username;
     users.push(username)
     io.emit('new user from server', { users });
   });
 
-  socket.on('disconnect', data => {
+  socket.on('disconnect', () => {
     const idx = users.findIndex(u => u === username);
     users.splice(idx, 1);
     io.emit('disconnected user from server', { username, users });
@@ -25,6 +25,10 @@ io.on('connection', socket => {
 
   socket.on('new message from client', data => {
     io.emit('new message from server', data);
+  });
+
+  socket.on('new gif from client', data => {
+    io.emit('new gif from server', data);
   });
 });
 
