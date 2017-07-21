@@ -1,4 +1,15 @@
 extends base.pug
 
 block content
-  h1 Hello World!
+  #new-message-area
+    h2 What's up?
+    form#new-message-form.form-horizontal
+      .form-group
+        .col-sm-8
+          textarea#new-message.form-control(placeholder="What's up?")
+        .col-sm-4
+          button.btn.btn-default.btn-lg(type='submit') Send Message!
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        ul#messages

@@ -6,3 +6,26 @@
 #modal {
   margin-top: 150px;
 }
+
+#new-message-area {
+  background-color: #673ab7;
+  padding: 20px;
+}
+
+#new-message-area h2 {
+  text-align: center;
+  color: #ccc;
+}
+
+.user-info {
+  background-color: peachpuff;
+}
+
+#messages { 
+  list-style: none;
+  padding: 0;
+}
+
+#messages li {
+  padding: 10px 20px;
+}
